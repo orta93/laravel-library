@@ -8,7 +8,7 @@
                 <div class="card-header">Listado de autores</div>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table table-striped table-hover">
                         <theader>
                             <tr>
                                 <th>Nombre</th>
@@ -21,7 +21,7 @@
                             <tr>
                                 <td>{{ $author->name }}</td>
                                 <td>{{ $author->last_name }}</td>
-                                <td>Editar</td>
+                                <td><a href="/authors/{{ $author->id }}/edit">Editar</a></td>
                                 <td>Eliminar</td>
                             </tr>
                             @endforeach
