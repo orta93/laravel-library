@@ -19,11 +19,11 @@ class Book extends Model
 
     public function author()
     {
-        return $this->belongsTo(Author::class);
+        return $this->belongsTo(Author::class)->withTrashed();
     }
 
     public function editorial()
     {
-        return $this->belongsTo(Editorial::class);
+        return $this->belongsTo(Editorial::class)->withTrashed();
     }
 }

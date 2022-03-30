@@ -40,7 +40,18 @@ Route::group(['prefix' => '/authors'], function () {
     Route::get('/{id}', 'AuthorController@show');
     Route::get('/{id}/edit', 'AuthorController@edit');
     Route::post('/{id}/update', 'AuthorController@update');
-    Route::post('/{id}/delete', 'AuthorController@delete');
+    Route::delete('/{id}/delete', 'AuthorController@delete');
+});
+
+Route::group(['prefix' => '/editorials'], function () {
+    Route::get('/', 'EditorialController@index');
+    Route::get('/create', 'EditorialController@create');
+    Route::post('/store', 'EditorialController@store');
+    Route::get('/{id}', 'EditorialController@show');
+    Route::get('/{id}/edit', 'EditorialController@edit');
+    Route::post('/{id}/update', 'EditorialController@update');
+    Route::post('/{id}/restore', 'EditorialController@restore');
+    Route::delete('/{id}/delete', 'EditorialController@delete');
 });
 
 Auth::routes();
